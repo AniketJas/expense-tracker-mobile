@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "expense-tracker-app",
+    "name": "Expense Tracker",
     "slug": "expense-tracker-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,9 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aniketjas.expensetracker"
     },
     "android": {
+      "package": "com.aniketjas.expensetracker",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/logo.png",
@@ -43,6 +45,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "0213a05a-c7fd-420c-970d-d73449525607"
+      }
+    },
+    "owner": "aniket_jas"
   }
 }
