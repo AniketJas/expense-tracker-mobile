@@ -1,50 +1,193 @@
-# Welcome to your Expo app 👋
+# Expense Tracker Mobile Client (React Native)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile-only React Native application for tracking personal expenses and income.  
+This app allows users to sign up, sign in, view their balance and transactions, and add new financial records in real time.
 
-## Get started
+> ⚠️ This repository contains **only the mobile client**.  
+> The backend API is hosted in a separate repository.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- 🔐 User Authentication (Sign Up & Sign In)
+- 📊 Dashboard showing:
+  - Total Balance
+  - Total Expenses
+  - Transaction History
+- ➕ Add New Transactions (Income & Expenses)
+- 📱 Mobile UI (Android & iOS support)
+- 🌐 API Integration with External Backend
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📸 Screenshots
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+<p align="center">
+  <img src="screenshots/signin.jpg" width="220" />
+  <img src="screenshots/signup.jpg" width="220" />
+  <img src="screenshots/notransaction.jpg" width="220" />
+  <img src="screenshots/withtransaction.jpg" width="220" />
+  <img src="screenshots/create.jpg" width="220" />
+</p>
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Screens
 
-When you're ready, run:
+- **Sign In** — Login to your account
+- **Sign Up** — Create new account
+- **Verification** — Verify new user via OTP sent to mail
+- **Home** — View balance, expenses, and transactions
+- **Create Transaction** — Add a new income or expense entry
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** React Native (Expo)
+- **Navigation:** Expo Router
+- **Authentication:** Clerk
+- **State Management:** React Hooks
+- **API Client:** Fetch / Axios
+- **Linting:** ESLint
+
+---
+
+## Installation
+
+Clone the repository:
 
 ```bash
-npm run reset-project
+git clone https://github.com/your-username/expense-tracker-mobile.git
+cd expense-tracker-mobile
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Install the dependencies:
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Run the application:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🔐 Environment Variables
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project uses the following environment variable for authentication and backend communication.
+
+Create a `.env` file in the root directory and add:
+
+```env
+EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+```
+
+> ⚠️ This is a **public key** required by Expo to configure Clerk authentication.  
+> Do NOT commit your `.env` file to GitHub. Always use `.env.example` for reference.
+
+---
+
+## 🔑 How to Get Clerk Key
+
+1. Go to https://clerk.com
+2. Create or open your application
+3. Navigate to **API Keys**
+4. Copy the **Publishable Key**
+5. Paste it into your `.env` file
+
+---
+
+## Run on Device
+
+Scan QR code using Expo Go App (Android/iOS).  
+Or run on emulator:
+
+```bash
+npx expo run:android
+npx expo run:ios
+```
+
+---
+
+## 📁 Folder Structure
+
+```bash
+expense-tracker-mobile/
+├── app/
+│   ├── (auth)/
+│   │   ├── _layout.jsx
+│   │   ├── sign-in.jsx
+│   │   └── sign-up.jsx
+│   │
+│   ├── (root)/
+│   │   ├── _layout.jsx
+│   │   ├── create.jsx
+│   │   └── index.jsx
+│   │
+│   └── _layout.jsx
+│
+├── assets/
+│   ├── fonts/
+│   ├── images/
+│   └── styles/
+│
+├── components/
+│   ├── BalanceCard.jsx
+│   ├── NoTransactionsFound.jsx
+│   ├── PageLoader.jsx
+│   ├── SafeScreen.jsx
+│   ├── SignOutButton.jsx
+│   └── TransactionItem.jsx
+│
+├── constants/
+│   ├── api.js
+│   └── colors.js
+│
+├── hooks/
+│   └── useTransactions.js
+│
+├── lib/
+│   └── utils.js
+│
+├── .env
+├── .gitignore
+├── app.json
+├── eslint.config.js
+├── expo-env.d.ts
+├── package-lock.json
+├── package.json
+├── README_EXPO.md
+├── LICENCE
+├── README.md
+└── tsconfig.json
+```
+
+---
+
+## Backend Repository
+
+Link - https://github.com/AniketJas/expense-tracker-api.git
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Author
+
+Aniket Jas  
+GitHub: https://github.com/AniketJas
+
+---
+
+## Support
+
+If you find this project helpful, consider giving it a star on GitHub!
